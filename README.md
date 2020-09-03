@@ -22,10 +22,10 @@
 python3 check_my_pass.py mypassword anotherpassword somerandompassword
 ```
 
-> Code for passing files directly into the command line.
+> Code for passing a txt file directly into the command line.
 
 ```
-python3 check_my_pass.py mypassword.txt passwords.txt
+python3 check_my_pass.py passwords.txt
 ```
 
 - Note that you can pass multiple password and verify if any of them were leak at once.
