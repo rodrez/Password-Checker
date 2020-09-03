@@ -13,6 +13,16 @@
 - pip install requirements.txt
 - python3 check_my_pass.py passwords.txt
 
+# Testing
+- Write any password in the passwords.txt file or enter the password directly into the command line as shown below.
+
+>>> Code for passing the passwords directly into the command line.
+```python3 check_my_pass.py mypassword anotherpassword somerandompassword```
+- Note that you can pass multiple password and verify if any of them were leak at once.
+
+>>> Code for passing the passwords directly into the command line.
+```python3 check_my_pass.py mypassword.txt passwords.txt```
+
 # Issues
 - No issues so far
 - Feel free to let me know if you find any issues.
