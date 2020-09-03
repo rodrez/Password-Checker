@@ -16,13 +16,17 @@
 # Testing
 - Write any password in the passwords.txt file or enter the password directly into the command line as shown below.
 
->>> Code for passing the passwords directly into the command line.
+> Code for passing passwords directly into the command line.
 
-```python3 check_my_pass.py mypassword anotherpassword somerandompassword```
+```
+python3 check_my_pass.py mypassword anotherpassword somerandompassword
+```
 
->>> Code for passing the passwords directly into the command line.
+> Code for passing files directly into the command line.
 
-```python3 check_my_pass.py mypassword.txt passwords.txt```
+```
+python3 check_my_pass.py mypassword.txt passwords.txt
+```
 
 - Note that you can pass multiple password and verify if any of them were leak at once.
 
