@@ -8,3 +8,11 @@
 - The we compare our hashed password with the ones we got from the API.
 - If our hash matches any of the hashes from the API we count how many leaks our password has been comproised.
 
+# How to run
+- git clone this repo
+- pip install requirements.txt
+- python3 check_my_pass.py passwords.txt
+
+# Issues
+- No issues so far
+- Feel free to let me know if you find any issues.
