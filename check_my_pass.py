@@ -4,7 +4,7 @@
 
 # Importlib use to handle import errors in a more pythonic approach
 from importlib import import_module
-libraries = ['requests', 'hashlib', 'sys', 'colorama', 'os']
+libraries = ['requests', 'hashlib', 'sys', 'colorama', 'os', 'random', 'string']
 
 for libname in libraries:
     try: 
