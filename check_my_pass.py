@@ -122,6 +122,39 @@ def pwned_check(password):
     
     return get_password_leaks_count(response, tail) 
 
+
+def pass_gen(length, security):
+    
+    bad_chars = ['`', "'", '"']
+    special_chars = [char for char in string.punctuation if char not in bad_chars]
+    lower_letters = [letter for letter in string.ascii_lowercase]
+    upper_letters = [letter for letter in string.ascii_uppercase]
+    numbers = [str(num) for num in range(10)]
+
+    password = ""
+    pswd = []
+    chars = [special_chars, lower_letters, upper_letters, numbers]
+
+    if security == "max":
+        for _ in range(length):
+            if len(password) == 0:
+                password += random.choice(special_chars)
+                password += random.choice(upper_letters)
+                password += random.choice(lower_letters)
+                password += random.choice(numbers)
+            else:
+
+                rand_selection = random.choice(chars)
+                rand_chars = rand_selection[random.randrange(len(rand_selection))]
+                
+                password += rand_chars
+
+            if len(password) >= length:
+                break
+        pswd.append(password) 
+    return pswd
+
+
 def main(args):
     
     for password in args:
@@ -134,11 +167,12 @@ def main(args):
 
 if __name__ == '__main__':
 
-    print(colorama.Fore.RED + "Hello! Although the program works inputing the password as an command line argument,\nit is highly encourage to use a txt file for security purposes." + colorama.Style.RESET_ALL)
+    # print(colorama.Fore.RED + "Hello! Although the program works inputing the password as an command line argument,\nit is highly encourage to use a txt file for security purposes." + colorama.Style.RESET_ALL)
+    # # Loops through the arguments passed and decides if the file exists
+    # for args in sys.argv[1:]:
+    #     if os.path.exists(args):
+    #         sys.exit(main(read_password_file(sys.argv[1:])))
+    #     else:
+    #         sys.exit(main(sys.argv[1:]))
 
-    # Loops through the arguments passed and decides if the file exists
-    for args in sys.argv[1:]:
-        if os.path.exists(args):
-            sys.exit(main(read_password_file(sys.argv[1:])))
-        else:
-            sys.exit(main(sys.argv[1:]))
+    main(pass_gen(4, "max"))
